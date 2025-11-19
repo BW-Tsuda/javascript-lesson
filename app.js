@@ -121,10 +121,10 @@ console.log(`${5} を ${3} で割った余りは ${result} です。`);
 
 console.log('\n Q10.スコープ');
 
-function foo() {
-  let x = 1;
-}
-console.log(x);
+//function foo() {
+//  let x = 1;
+//}
+//console.log(x);
 
 // x は foo 関数のスコープ内でしか存在しない ため、
 // 関数の外からは 参照できません。
@@ -139,3 +139,79 @@ function foo() {
 
 foo();
 console.log(x); 
+
+
+
+
+//JS基礎レッスン　応用問題
+
+
+console.log('\n Q1.標準組み込みオブジェクト');
+
+console.log(Math.floor(Math.random() * 10));
+
+
+console.log('\n Q2 - 1.コールバック関数');
+
+function sayHello() {
+  console.log('Hello World!');
+}
+
+setTimeout(sayHello, 3000);
+
+//setTimeout(() => {
+//  console.log('Hello World!');
+//}, 3000);
+
+
+console.log('\n Q2 - 2.コールバック関数');
+
+
+function printName(firstName, formatter) {
+  console.log(formatter(firstName));
+}
+
+const addIntro = (name) => '私の名前は' + name + 'です。';
+
+printName('草介', addIntro);
+
+
+console.log('\n Q3 if');
+
+let num = 0
+
+if (num > 0) {
+  console.log('num is greater than 0');
+} else if (num < 0) {
+  console.log('num is less than 0');
+} else if (num === 0) {
+  console.log('num is 0');
+}
+
+
+console.log('\n Q4 for');
+
+let numbers = [];
+
+for (let i = 0; i < 100; i++){
+  numbers.push(i);
+}
+
+console.log(numbers);
+
+
+console.log('\n Q5 for × if');
+
+let mixed = [4, '2', 5, '8', '9', 0, 1];
+
+for (let item of mixed) {
+  if (typeof item === 'number') {
+    if (item % 2 === 0) {
+      console.log('even');
+    } else {
+      console.log('odd');
+    }
+  } else {
+    console.log('not number');
+  }
+}
