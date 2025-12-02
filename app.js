@@ -202,16 +202,29 @@ console.log(numbers);
 
 console.log('\n Q5 for × if');
 
+//let mixed = [4, '2', 5, '8', '9', 0, 1];
+
+//for (let item of mixed) {
+
+// if (typeof item === 'number') {
+//    if (item % 2 === 0) {
+//      console.log('even');
+//    } else {
+//      console.log('odd');
+//    }
+//  } else {
+//    console.log('not number');
+//  }
+//}
+
 let mixed = [4, '2', 5, '8', '9', 0, 1];
 
-for (let item of mixed) {
-  if (typeof item === 'number') {
-    if (item % 2 === 0) {
-      console.log('even');
-    } else {
-      console.log('odd');
-    }
+mixed.forEach(item => { 
+  if (typeof item === 'number' && item % 2 === 0) {          
+    console.log('even');
+  } else if (typeof item === 'number' && item % 2 !== 0) {
+    console.log('odd');
   } else {
     console.log('not number');
   }
-}
+});
